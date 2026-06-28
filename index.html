@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chính Sách Quyền Riêng Tư - Bee Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0c0c0e;
+      --card-bg: rgba(22, 22, 26, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --primary: #FF7C01;
+      --primary-glow: rgba(255, 124, 1, 0.15);
+      --secondary: #FF4375;
+      --accent-gradient: linear-gradient(135deg, #FF7C01 0%, #FF4375 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Outfit', sans-serif;
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 124, 1, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(255, 67, 117, 0.05) 0%, transparent 40%);
+      background-attachment: fixed;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 50px 40px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(12px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--accent-gradient);
+    }
+
+    header {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .logo-container {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 70px;
+      height: 70px;
+      background: var(--accent-gradient);
+      border-radius: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px var(--primary-glow);
+    }
+
+    .logo-container svg {
+      width: 40px;
+      height: 40px;
+      fill: #fff;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .meta-date {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--card-border), transparent);
+      margin: 30px 0;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fff;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+
+    h3::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      margin-right: 12px;
+      box-shadow: 0 0 8px var(--primary);
+    }
+
+    h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: var(--text-main);
+      margin-bottom: 16px;
+      font-weight: 300;
+      font-size: 1.02rem;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      color: #e5e7eb;
+    }
+
+    ul {
+      list-style-type: none;
+      margin-bottom: 20px;
+      padding-left: 5px;
+    }
+
+    li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+      color: #d1d5db;
+      font-weight: 300;
+    }
+
+    li::before {
+      content: "•";
+      color: var(--secondary);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+      position: absolute;
+    }
+
+    li strong {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .alert-box {
+      background: rgba(255, 124, 1, 0.05);
+      border-left: 3px solid var(--primary);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 15px 0 25px 0;
+    }
+
+    .alert-box p {
+      margin-bottom: 0;
+      font-size: 0.98rem;
+      color: #e5e7eb;
+    }
+
+    .contact-info {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-top: 30px;
+    }
+
+    .contact-info li {
+      display: flex;
+      align-items: center;
+      padding-left: 0;
+      margin-bottom: 12px;
+    }
+
+    .contact-info li::before {
+      display: none;
+    }
+
+    .contact-info li strong {
+      width: 100px;
+      color: var(--text-muted);
+    }
+
+    .contact-info li a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s ease;
+    }
+
+    .contact-info li a:hover {
+      color: var(--secondary);
+      text-decoration: underline;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: var(--accent-gradient);
+      border: none;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(255, 67, 117, 0.2);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 67, 117, 0.35);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--text-muted);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 15px 10px;
+      }
+      .container {
+        padding: 30px 20px;
+        border-radius: 16px;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      .actions {
+        flex-direction: column;
+      }
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        color: #000;
+        padding: 0;
+      }
+      .container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        background: transparent;
+      }
+      .container::before, .actions, .logo-container {
+        display: none !important;
+      }
+      h1 {
+        color: #000;
+        -webkit-text-fill-color: initial;
+      }
+      h3 {
+        color: #000;
+      }
+      h3::before {
+        display: none;
+      }
+      li {
+        color: #333;
+      }
+      li strong {
+        color: #000;
+      }
+      .alert-box {
+        border-color: #000;
+        background: #f9f9f9;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-container">
+        <!-- Modern Bee Icon SVG -->
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2a4 4 0 0 1 4 4v2.5a.5.5 0 0 0 .5.5h2a3.5 3.5 0 0 1 0 7h-2a.5.5 0 0 0-.5.5v1.5a4 4 0 0 1-8 0v-1.5a.5.5 0 0 0-.5-.5h-2a3.5 3.5 0 0 1 0-7h2a.5.5 0 0 0 .5-.5V6a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v3h4V6a2 2 0 0 0-2-2zm-4.5 7h-2a1.5 1.5 0 0 0 0 3h2a1.5 1.5 0 0 0 0-3zm13 0h-2a1.5 1.5 0 0 0 0 3h2a1.5 1.5 0 0 0 0-3z"/>
+        </svg>
+      </div>
+      <h1>CHÍNH SÁCH QUYỀN RIÊNG TƯ</h1>
+      <p class="meta-date">Cập nhật lần cuối: Ngày 28 tháng 06 năm 2026</p>
+    </header>
+
+    <div class="intro">
+      <p>Chào mừng bạn đến với <strong>Bee Service</strong> (sau đây gọi tắt là "Ứng dụng"). Chúng tôi cam kết bảo vệ quyền riêng tư và an toàn thông tin cá nhân của bạn. Chính sách quyền riêng tư này giải thích cách chúng tôi thu thập, sử dụng, lưu trữ và bảo vệ thông tin của bạn khi bạn sử dụng ứng dụng Bee Service.</p>
+      <p>Bằng việc cài đặt và sử dụng Ứng dụng, bạn đồng ý với các điều khoản được mô tả trong Chính sách này.</p>
+    </div>
+
+    <hr>
+
+    <section>
+      <h3>1. THÔNG TIN CHÚNG TÔI THU THẬP</h3>
+      <p>Để cung cấp dịch vụ tốt nhất và đảm bảo tính năng hoạt động ổn định, Ứng dụng có thể yêu cầu và thu thập các thông tin sau:</p>
+
+      <h4>a. Thông tin cá nhân do bạn cung cấp</h4>
+      <ul>
+        <li><strong>Thông tin tài khoản:</strong> Tên người dùng, số điện thoại, địa chỉ email, mật khẩu hoặc thông tin đăng nhập được cấp bởi tổ chức/doanh nghiệp quản lý của bạn.</li>
+      </ul>
+
+      <h4>b. Thông tin thu thập tự động từ thiết bị</h4>
+      <ul>
+        <li><strong>Dữ liệu Vị trí (Location Data):</strong> Do đặc thù tính năng điều phối và theo dõi dịch vụ, Ứng dụng cần truy cập quyền vị trí của thiết bị (bao gồm cả vị trí chính xác và vị trí tương đối).</li>
+      </ul>
+      <div class="alert-box">
+        <p><strong>Lưu ý về Vị trí chạy nền (Background Location):</strong> Ứng dụng có thể thu thập dữ liệu vị trí ngay cả khi ứng dụng đã bị đóng hoặc không sử dụng, nhằm mục đích cập nhật lộ trình di chuyển theo thời gian thực phục vụ cho công việc.</p>
+      </div>
+      <ul>
+        <li><strong>Thông tin thiết bị:</strong> Mã định danh thiết bị (Device ID), kiểu máy, phiên bản hệ điều hành Android, địa chỉ IP và trạng thái mạng.</li>
+        <li><strong>Nhật ký hoạt động (Log Data):</strong> Thông tin về lỗi ứng dụng (Crash reports), thời gian sử dụng và các tương tác của bạn trong ứng dụng.</li>
+      </ul>
+
+      <h4>c. Quyền truy cập phần cứng thiết bị (Permissions)</h4>
+      <p>Ứng dụng sẽ yêu cầu sự cho phép của bạn trước khi truy cập vào các tính năng sau:</p>
+      <ul>
+        <li><strong>Camera:</strong> Để chụp ảnh xác nhận công việc, quét mã QR hoặc tải lên bằng chứng hoàn thành dịch vụ.</li>
+        <li><strong>Bộ nhớ / Tệp và Phương tiện (Storage):</strong> Để lưu trữ tạm thời hoặc tải ảnh từ thiết bị lên hệ thống.</li>
+        <li><strong>Thông báo (Notifications):</strong> Để gửi các cập nhật quan trạng về trạng thái công việc hoặc thông báo hệ thống.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>2. MỤC ĐÍCH SỬ DỤNG THÔNG TIN</h3>
+      <p>Chúng tôi sử dụng thông tin thu thập được cho các mục đích sau:</p>
+      <ul>
+        <li>Cung cấp, duy trì và cải tiến các tính năng của Bee Service.</li>
+        <li>Xác thực danh tính người dùng và quản lý tài khoản.</li>
+        <li>Theo dõi lộ trình, điều phối trạng thái dịch vụ theo thời gian thực.</li>
+        <li>Hỗ trợ kỹ thuật, phát hiện và xử lý lỗi hệ thống hoặc các hành vi gian lận.</li>
+        <li>Gửi các thông báo kỹ thuật, cập nhật bảo mật và thông tin hành chính.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>3. CHIA SẺ VÀ TIẾT LỘ THÔNG TIN</h3>
+      <p>Chúng tôi cam kết <strong>KHÔNG</strong> bán, trao đổi hoặc cho thuê thông tin cá nhân của bạn cho bên thứ ba vì mục đích thương mại. Thông tin chỉ được chia sẻ trong các trường hợp sau:</p>
+      <ul>
+        <li><strong>Với Tổ chức/Doanh nghiệp của bạn:</strong> Nếu bạn sử dụng tài khoản doanh nghiệp, dữ liệu hoạt động và vị trí của bạn sẽ được hiển thị trên hệ thống quản trị của doanh nghiệp đó.</li>
+        <li><strong>Nhà cung cấp dịch vụ bên thứ ba:</strong> Chúng tôi có thể tích hợp một số dịch vụ SDK của bên thứ ba để tối ưu hệ thống (ví dụ: Google Play Services, Firebase Analytics, Firebase Crashlytics). Các bên này chỉ được tiếp cận thông tin kỹ thuật phục vụ cho mục đích vận hành và phân tích lỗi.</li>
+        <li><strong>Yêu cầu pháp lý:</strong> Chúng tôi có thể tiết lộ thông tin nếu được yêu cầu bởi cơ quan nhà nước có thẩm quyền hoặc theo quy định của pháp luật.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>4. BẢO MẬT DỮ LIỆU</h3>
+      <p>Chúng tôi áp dụng các biện pháp bảo mật kỹ thuật và tổ chức nghiêm ngặt (như mã hóa dữ liệu truyền tải SSL/TLS) để bảo vệ dữ liệu của bạn khỏi việc truy cập, thay đổi, tiết lộ hoặc phá hủy trái phép. Tuy nhiên, không có phương thức truyền tải qua Internet hoặc phương thức lưu trữ điện tử nào là an toàn tuyệt đối, vì vậy chúng tôi không thể đảm bảo an ninh tuyệt đối.</p>
+    </section>
+
+    <section>
+      <h3>5. QUYỀN CỦA NGƯỜI DÙNG</h3>
+      <p>Bạn có toàn quyền kiểm soát thông tin cá nhân của mình thông qua cài đặt thiết bị:</p>
+      <ul>
+        <li>Bạn có thể bật/tắt quyền truy cập Vị trí, Camera, Bộ nhớ trong phần <strong>Cài đặt hệ điều hành (Settings) > Ứng dụng > Bee Service</strong>.</li>
+        <li>Bạn có quyền yêu cầu chỉnh sửa thông tin tài khoản hoặc yêu cầu xóa tài khoản/dữ liệu bằng cách liên hệ với quản trị viên hệ thống của bạn hoặc gửi yêu cầu cho chúng tôi.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>6. THAY ĐỔI CHÍNH SÁCH BẢO MẬT</h3>
+      <p>Chính sách quyền riêng tư này có thể được cập nhật theo thời gian để phù hợp với các thay đổi của ứng dụng hoặc quy định pháp luật. Mọi thay đổi sẽ được cập nhật trên trang này và có hiệu lực ngay khi được đăng tải.</p>
+    </section>
+
+    <section>
+      <h3>7. THÔNG TIN LIÊN HỆ</h3>
+      <p>Nếu bạn có bất kỳ câu hỏi hoặc đóng góp nào về Chính sách quyền riêng tư này, vui lòng liên hệ với chúng tôi qua:</p>
+      <div class="contact-info">
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:ngocbaongo.qn@gmail.com">ngocbaongo.qn@gmail.com</a></li>
+          <li><strong>Website:</strong> <a href="https://beetrack.com" target="_blank" rel="noopener noreferrer">beetrack.com</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button class="btn btn-primary" onclick="window.print()">In bản chính sách</button>
+      <button class="btn btn-secondary" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Cuộn lên đầu trang</button>
+    </div>
+  </div>
+</body>
+</html>
