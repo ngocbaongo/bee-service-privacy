@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Điều Khoản Dịch Vụ - Bee Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0c0c0e;
+      --card-bg: rgba(22, 22, 26, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --primary: #FF7C01;
+      --primary-glow: rgba(255, 124, 1, 0.15);
+      --secondary: #FF4375;
+      --accent-gradient: linear-gradient(135deg, #FF7C01 0%, #FF4375 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Outfit', sans-serif;
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 124, 1, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(255, 67, 117, 0.05) 0%, transparent 40%);
+      background-attachment: fixed;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 50px 40px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(12px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--accent-gradient);
+    }
+
+    header {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .logo-container {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 70px;
+      height: 70px;
+      background: var(--accent-gradient);
+      border-radius: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px var(--primary-glow);
+    }
+
+    .logo-container svg {
+      width: 40px;
+      height: 40px;
+      fill: #fff;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .meta-date {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--card-border), transparent);
+      margin: 30px 0;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fff;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+
+    h3::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      margin-right: 12px;
+      box-shadow: 0 0 8px var(--primary);
+    }
+
+    h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: var(--text-main);
+      margin-bottom: 16px;
+      font-weight: 300;
+      font-size: 1.02rem;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      color: #e5e7eb;
+    }
+
+    ul {
+      list-style-type: none;
+      margin-bottom: 20px;
+      padding-left: 5px;
+    }
+
+    li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+      color: #d1d5db;
+      font-weight: 300;
+    }
+
+    li::before {
+      content: "•";
+      color: var(--secondary);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+      position: absolute;
+    }
+
+    li strong {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .alert-box {
+      background: rgba(255, 124, 1, 0.05);
+      border-left: 3px solid var(--primary);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 15px 0 25px 0;
+    }
+
+    .alert-box p {
+      margin-bottom: 0;
+      font-size: 0.98rem;
+      color: #e5e7eb;
+    }
+
+    .contact-info {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-top: 30px;
+    }
+
+    .contact-info li {
+      display: flex;
+      align-items: center;
+      padding-left: 0;
+      margin-bottom: 12px;
+    }
+
+    .contact-info li::before {
+      display: none;
+    }
+
+    .contact-info li strong {
+      width: 100px;
+      color: var(--text-muted);
+    }
+
+    .contact-info li a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s ease;
+    }
+
+    .contact-info li a:hover {
+      color: var(--secondary);
+      text-decoration: underline;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: var(--accent-gradient);
+      border: none;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(255, 67, 117, 0.2);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 67, 117, 0.35);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--text-muted);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 15px 10px;
+      }
+      .container {
+        padding: 30px 20px;
+        border-radius: 16px;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      .actions {
+        flex-direction: column;
+      }
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        color: #000;
+        padding: 0;
+      }
+      .container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        background: transparent;
+      }
+      .container::before, .actions, .logo-container {
+        display: none !important;
+      }
+      h1 {
+        color: #000;
+        -webkit-text-fill-color: initial;
+      }
+      h3 {
+        color: #000;
+      }
+      h3::before {
+        display: none;
+      }
+      li {
+        color: #333;
+      }
+      li strong {
+        color: #000;
+      }
+      .alert-box {
+        border-color: #000;
+        background: #f9f9f9;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-container">
+        <!-- Modern Bee Icon SVG -->
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2a4 4 0 0 1 4 4v2.5a.5.5 0 0 0 .5.5h2a3.5 3.5 0 0 1 0 7h-2a.5.5 0 0 0-.5.5v1.5a4 4 0 0 1-8 0v-1.5a.5.5 0 0 0-.5-.5h-2a3.5 3.5 0 0 1 0-7h2a.5.5 0 0 0 .5-.5V6a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v3h4V6a2 2 0 0 0-2-2zm-4.5 7h-2a1.5 1.5 0 0 0 0 3h2a1.5 1.5 0 0 0 0-3zm13 0h-2a1.5 1.5 0 0 0 0 3h2a1.5 1.5 0 0 0 0-3z"/>
+        </svg>
+      </div>
+      <h1>ĐIỀU KHOẢN DỊCH VỤ</h1>
+      <p class="meta-date">Cập nhật lần cuối: Ngày 11 tháng 09 năm 2026</p>
+    </header>
+
+    <div class="intro">
+      <p>Điều khoản dịch vụ này điều chỉnh việc sử dụng nền tảng <strong>Bee Service</strong> (sau đây gọi tắt là "Dịch vụ") do <strong>Clavis AUREA Company Limited</strong> cung cấp cho các khách sạn, khu nghỉ dưỡng và nhân viên của họ.</p>
+      <p>Bằng việc đăng ký, kết nối tài khoản hoặc sử dụng Dịch vụ, bạn đồng ý tuân thủ các điều khoản dưới đây. Việc xử lý dữ liệu cá nhân được quy định riêng tại <a href="./">Chính sách quyền riêng tư</a>.</p>
+    </div>
+
+    <hr>
+
+    <section>
+      <h3>1. DỊCH VỤ</h3>
+      <p>Bee Service là nền tảng phần mềm giúp khách sạn quản lý trải nghiệm của khách lưu trú, bao gồm hộp thư đa kênh để nhân viên khách sạn tiếp nhận và trả lời tin nhắn của khách qua các nền tảng nhắn tin như WhatsApp.</p>
+    </section>
+
+    <section>
+      <h3>2. TÀI KHOẢN VÀ QUYỀN TRUY CẬP</h3>
+      <ul>
+        <li>Khách sạn chịu trách nhiệm cấp và thu hồi quyền truy cập cho nhân viên của mình.</li>
+        <li>Người dùng có trách nhiệm bảo mật thông tin đăng nhập và thông báo ngay cho chúng tôi khi phát hiện truy cập trái phép.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>3. KẾT NỐI WHATSAPP</h3>
+      <ul>
+        <li>Mỗi khách sạn tự sở hữu tài khoản WhatsApp Business và số điện thoại của mình. Bee Service chỉ được truy cập các tài khoản mà khách sạn chủ động kết nối.</li>
+        <li>Khách sạn có trách nhiệm tuân thủ Chính sách Kinh doanh và Chính sách Thương mại của WhatsApp khi sử dụng Dịch vụ.</li>
+        <li>Các khoản phí nhắn tin do Meta tính được thanh toán trực tiếp giữa khách sạn và Meta.</li>
+        <li>Khách sạn có thể ngắt kết nối tài khoản WhatsApp khỏi Bee Service bất kỳ lúc nào tại trang Cấu hình kênh.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>4. SỬ DỤNG ĐƯỢC PHÉP</h3>
+      <p>Khi sử dụng Dịch vụ, bạn không được:</p>
+      <ul>
+        <li>Gửi tin nhắn rác, tin nhắn quảng cáo không được khách đồng ý, hoặc nội dung vi phạm pháp luật.</li>
+        <li>Mạo danh người khác hoặc cung cấp thông tin sai lệch.</li>
+        <li>Can thiệp, dò quét hoặc tìm cách truy cập trái phép vào hệ thống.</li>
+      </ul>
+      <p>Chúng tôi có quyền tạm ngưng quyền truy cập của tài khoản vi phạm các quy định trên.</p>
+    </section>
+
+    <section>
+      <h3>5. DỮ LIỆU VÀ QUYỀN RIÊNG TƯ</h3>
+      <p>Việc thu thập, sử dụng, lưu trữ và xóa dữ liệu được thực hiện theo <a href="./">Chính sách quyền riêng tư</a>. Hướng dẫn yêu cầu xóa dữ liệu có tại <a href="./#xoa-du-lieu">mục Yêu cầu xóa dữ liệu</a>.</p>
+    </section>
+
+    <section>
+      <h3>6. GIỚI HẠN TRÁCH NHIỆM</h3>
+      <p>Dịch vụ phụ thuộc vào các nền tảng của bên thứ ba như Meta và WhatsApp. Chúng tôi không chịu trách nhiệm đối với gián đoạn, thay đổi chính sách hoặc sự cố phát sinh từ các nền tảng này.</p>
+    </section>
+
+    <section>
+      <h3>7. THAY ĐỔI ĐIỀU KHOẢN</h3>
+      <p>Chúng tôi có thể cập nhật Điều khoản dịch vụ này theo thời gian. Mọi thay đổi được đăng tải trên trang này và có hiệu lực kể từ ngày cập nhật ghi ở đầu trang.</p>
+    </section>
+
+    <section>
+      <h3>8. THÔNG TIN LIÊN HỆ</h3>
+      <div class="contact-info">
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:ngocbaongo.qn@gmail.com">ngocbaongo.qn@gmail.com</a></li>
+          <li><strong>Website:</strong> <a href="https://clavis-aurea.io" target="_blank" rel="noopener noreferrer">clavis-aurea.io</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button class="btn btn-primary" onclick="window.print()">In điều khoản dịch vụ</button>
+      <button class="btn btn-secondary" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Cuộn lên đầu trang</button>
+    </div>
+  </div>
+</body>
+</html>
