@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chính Sách Quyền Riêng Tư - Beetrack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0c0c0e;
+      --card-bg: rgba(22, 22, 26, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --primary: #FF7C01;
+      --primary-glow: rgba(255, 124, 1, 0.15);
+      --secondary: #FF4375;
+      --accent-gradient: linear-gradient(135deg, #FF7C01 0%, #FF4375 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Outfit', sans-serif;
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 124, 1, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(255, 67, 117, 0.05) 0%, transparent 40%);
+      background-attachment: fixed;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 50px 40px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(12px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--accent-gradient);
+    }
+
+    header {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .logo-container {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 70px;
+      height: 70px;
+      background: var(--accent-gradient);
+      border-radius: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px var(--primary-glow);
+    }
+
+    .logo-container svg {
+      width: 40px;
+      height: 40px;
+      fill: #fff;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .meta-date {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--card-border), transparent);
+      margin: 30px 0;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fff;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+
+    h3::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      margin-right: 12px;
+      box-shadow: 0 0 8px var(--primary);
+    }
+
+    h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: var(--text-main);
+      margin-bottom: 16px;
+      font-weight: 300;
+      font-size: 1.02rem;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      color: #e5e7eb;
+    }
+
+    ul {
+      list-style-type: none;
+      margin-bottom: 20px;
+      padding-left: 5px;
+    }
+
+    li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+      color: #d1d5db;
+      font-weight: 300;
+    }
+
+    li::before {
+      content: "•";
+      color: var(--secondary);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+      position: absolute;
+    }
+
+    li strong {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .alert-box {
+      background: rgba(255, 124, 1, 0.05);
+      border-left: 3px solid var(--primary);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 15px 0 25px 0;
+    }
+
+    .alert-box p {
+      margin-bottom: 0;
+      font-size: 0.98rem;
+      color: #e5e7eb;
+    }
+
+    .contact-info {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-top: 30px;
+    }
+
+    .contact-info li {
+      display: flex;
+      align-items: center;
+      padding-left: 0;
+      margin-bottom: 12px;
+    }
+
+    .contact-info li::before {
+      display: none;
+    }
+
+    .contact-info li strong {
+      width: 100px;
+      color: var(--text-muted);
+    }
+
+    .contact-info li a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s ease;
+    }
+
+    .contact-info li a:hover {
+      color: var(--secondary);
+      text-decoration: underline;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: var(--accent-gradient);
+      border: none;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(255, 67, 117, 0.2);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 67, 117, 0.35);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--text-muted);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 15px 10px;
+      }
+      .container {
+        padding: 30px 20px;
+        border-radius: 16px;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      .actions {
+        flex-direction: column;
+      }
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        color: #000;
+        padding: 0;
+      }
+      .container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        background: transparent;
+      }
+      .container::before, .actions, .logo-container {
+        display: none !important;
+      }
+      h1 {
+        color: #000;
+        -webkit-text-fill-color: initial;
+      }
+      h3 {
+        color: #000;
+      }
+      h3::before {
+        display: none;
+      }
+      li {
+        color: #333;
+      }
+      li strong {
+        color: #000;
+      }
+      .alert-box {
+        border-color: #000;
+        background: #f9f9f9;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-container">
+        <!-- Modern Bee Icon SVG -->
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2a4 4 0 0 1 4 4v2.5a.5.5 0 0 0 .5.5h2a3.5 3.5 0 0 1 0 7h-2a.5.5 0 0 0-.5.5v1.5a4 4 0 0 1-8 0v-1.5a.5.5 0 0 0-.5-.5h-2a3.5 3.5 0 0 1 0-7h2a.5.5 0 0 0 .5-.5V6a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v3h4V6a2 2 0 0 0-2-2zm-4.5 7h-2a1.5 1.5 0 0 0 0 3h2a1.5 1.5 0 0 0 0-3zm13 0h-2a1.5 1.5 0 0 0 0 3h2a1.5 1.5 0 0 0 0-3z"/>
+        </svg>
+      </div>
+      <h1>CHÍNH SÁCH QUYỀN RIÊNG TƯ</h1>
+      <p class="meta-date">Ứng dụng Beetrack · Cập nhật lần cuối: Ngày 25 tháng 09 năm 2026</p>
+    </header>
+
+    <div class="intro">
+      <p><strong>Beetrack</strong> (sau đây gọi tắt là "Ứng dụng") là ứng dụng quản lý vận hành dành cho nhân viên của khách sạn, khu nghỉ dưỡng và doanh nghiệp, do <strong>Clavis Aurea</strong> phát triển và vận hành. Chính sách này áp dụng cho cả bản chính thức Beetrack và bản thử nghiệm <strong>Beetrack dev</strong>.</p>
+      <p>Ứng dụng chỉ dành cho người dùng có tài khoản do tổ chức hoặc doanh nghiệp nơi bạn làm việc (sau đây gọi là "Tổ chức của bạn") cấp. Ứng dụng không cho phép tự đăng ký tài khoản công khai. Bằng việc đăng nhập và sử dụng Ứng dụng, bạn đồng ý với các nội dung được mô tả trong Chính sách này.</p>
+    </div>
+
+    <hr>
+
+    <section>
+      <h3>1. THÔNG TIN CHÚNG TÔI THU THẬP</h3>
+
+      <h4>a. Thông tin tài khoản</h4>
+      <ul>
+        <li><strong>Thông tin hồ sơ nhân viên</strong> do Tổ chức của bạn cung cấp khi tạo tài khoản: họ tên, địa chỉ email công việc, số điện thoại, mã nhân viên, bộ phận, chức vụ và phân quyền sử dụng.</li>
+        <li><strong>Thông tin đăng nhập:</strong> tên đăng nhập và mật khẩu, hoặc thông tin định danh (họ tên, email) nhận từ tài khoản Microsoft của Tổ chức nếu Tổ chức bật đăng nhập bằng Microsoft. Mã truy cập (token) sau khi đăng nhập được lưu trong vùng lưu trữ bảo mật của thiết bị.</li>
+      </ul>
+
+      <h4>b. Dữ liệu công việc do bạn tạo hoặc xử lý</h4>
+      <ul>
+        <li>Nhiệm vụ, checklist buồng phòng, kiểm kê tài sản và vật tư, báo cáo vận hành, đồ thất lạc, mượn trả đồ, đơn dịch vụ, ca làm việc và các nghiệp vụ khác mà Tổ chức của bạn sử dụng.</li>
+        <li>Ảnh chụp, tệp đính kèm, chữ ký điện tử và tin nhắn thoại mà bạn chủ động tạo trong Ứng dụng.</li>
+        <li>Tin nhắn trao đổi nội bộ giữa các nhân viên trong Tổ chức.</li>
+        <li>Thông tin về khách lưu trú và khách ra vào (ví dụ họ tên, số phòng, thời gian lưu trú) mà bạn xem hoặc nhập khi thực hiện công việc. Các thông tin này thuộc quyền quản lý của Tổ chức của bạn.</li>
+      </ul>
+
+      <h4>c. Thông tin kỹ thuật thu thập tự động</h4>
+      <ul>
+        <li><strong>Thông tin thiết bị:</strong> kiểu máy, hệ điều hành, phiên bản Ứng dụng, địa chỉ IP và mã nhận thông báo đẩy của thiết bị.</li>
+        <li><strong>Báo cáo lỗi:</strong> thông tin kỹ thuật khi Ứng dụng gặp sự cố, dùng để tìm và sửa lỗi.</li>
+        <li><strong>Thống kê sử dụng:</strong> các màn hình và thao tác được sử dụng, dùng để cải thiện Ứng dụng.</li>
+      </ul>
+
+      <h4>d. Quyền truy cập trên thiết bị</h4>
+      <p>Ứng dụng chỉ xin các quyền sau và chỉ sử dụng khi bạn thao tác tính năng tương ứng:</p>
+      <ul>
+        <li><strong>Camera:</strong> chụp ảnh minh chứng công việc, chụp ảnh tài sản, quét mã vạch và mã QR.</li>
+        <li><strong>Ảnh và tệp (Bộ nhớ):</strong> chọn ảnh hoặc tệp để đính kèm, lưu ảnh bạn chọn về thiết bị.</li>
+        <li><strong>Micro:</strong> ghi âm tin nhắn thoại khi bạn nhấn nút ghi âm.</li>
+        <li><strong>Thông báo:</strong> gửi thông báo về nhiệm vụ, tin nhắn và cập nhật công việc.</li>
+      </ul>
+      <div class="alert-box">
+        <p><strong>Ứng dụng không</strong> thu thập vị trí của bạn, không truy cập danh bạ và không ghi âm hay chụp ảnh khi bạn không thao tác.</p>
+      </div>
+    </section>
+
+    <section>
+      <h3>2. MỤC ĐÍCH SỬ DỤNG THÔNG TIN</h3>
+      <ul>
+        <li>Xác thực danh tính và quản lý tài khoản theo phân quyền của Tổ chức.</li>
+        <li>Cung cấp các tính năng giao việc, theo dõi, báo cáo và trao đổi nội bộ.</li>
+        <li>Gửi thông báo về công việc được giao, tin nhắn và thay đổi trạng thái.</li>
+        <li>Hỗ trợ kỹ thuật, phát hiện và khắc phục lỗi, bảo vệ hệ thống khỏi truy cập trái phép.</li>
+        <li>Cải thiện hiệu năng và trải nghiệm sử dụng Ứng dụng.</li>
+      </ul>
+      <p>Chúng tôi <strong>không</strong> sử dụng dữ liệu của bạn cho mục đích quảng cáo và <strong>không</strong> bán dữ liệu cho bất kỳ bên nào.</p>
+    </section>
+
+    <section>
+      <h3>3. VAI TRÒ CỦA TỔ CHỨC CỦA BẠN</h3>
+      <p>Tổ chức của bạn là bên quyết định việc thu thập và sử dụng dữ liệu công việc. Clavis Aurea cung cấp và vận hành hệ thống theo thỏa thuận với Tổ chức. Quản trị viên của Tổ chức có thể xem dữ liệu công việc, lịch sử thao tác và thông tin hồ sơ nhân viên của bạn trên hệ thống quản trị, trong phạm vi phân quyền mà Tổ chức thiết lập.</p>
+    </section>
+
+    <section>
+      <h3>4. CHIA SẺ THÔNG TIN VỚI BÊN THỨ BA</h3>
+      <p>Thông tin chỉ được chia sẻ trong các trường hợp sau:</p>
+      <ul>
+        <li><strong>Google Firebase</strong> (Crashlytics, Analytics, Cloud Messaging): nhận thông tin kỹ thuật để báo cáo lỗi, thống kê sử dụng và gửi thông báo đẩy.</li>
+        <li><strong>Google reCAPTCHA:</strong> kiểm tra màn hình đăng nhập nhằm chống truy cập tự động.</li>
+        <li><strong>Microsoft:</strong> xác thực đăng nhập khi Tổ chức của bạn bật đăng nhập bằng tài khoản Microsoft.</li>
+        <li><strong>Dịch vụ lưu trữ đám mây:</strong> lưu ảnh và tệp đính kèm mà bạn tải lên.</li>
+        <li><strong>Yêu cầu pháp lý:</strong> khi có yêu cầu của cơ quan nhà nước có thẩm quyền theo quy định của pháp luật.</li>
+      </ul>
+      <p>Mỗi nhà cung cấp trên chỉ được tiếp cận phần thông tin cần thiết cho dịch vụ của họ và xử lý dữ liệu theo chính sách quyền riêng tư của chính họ.</p>
+    </section>
+
+    <section>
+      <h3>5. LƯU TRỮ VÀ BẢO MẬT DỮ LIỆU</h3>
+      <p>Dữ liệu được truyền qua kết nối mã hóa SSL/TLS và lưu trên máy chủ của hệ thống Beetrack dành cho Tổ chức của bạn. Dữ liệu được lưu trong suốt thời gian tài khoản của bạn còn hoạt động hoặc theo thời hạn lưu trữ mà Tổ chức quy định. Chúng tôi áp dụng các biện pháp kỹ thuật và tổ chức phù hợp để bảo vệ dữ liệu, tuy nhiên không có phương thức truyền tải hay lưu trữ điện tử nào an toàn tuyệt đối.</p>
+    </section>
+
+    <section>
+      <h3>6. QUYỀN CỦA NGƯỜI DÙNG</h3>
+      <ul>
+        <li>Bạn có thể bật hoặc tắt quyền Camera, Ảnh, Micro và Thông báo tại <strong>Cài đặt của thiết bị &gt; Ứng dụng &gt; Beetrack</strong>. Khi tắt quyền, tính năng tương ứng sẽ không hoạt động.</li>
+        <li>Bạn có quyền yêu cầu xem, chỉnh sửa thông tin cá nhân, hoặc yêu cầu xóa tài khoản và dữ liệu theo hướng dẫn tại <a href="#xoa-du-lieu">mục 7</a>.</li>
+      </ul>
+    </section>
+
+    <section id="xoa-du-lieu">
+      <h3>7. YÊU CẦU XÓA TÀI KHOẢN VÀ DỮ LIỆU</h3>
+      <p>Tài khoản Beetrack do Tổ chức của bạn cấp, vì vậy bạn có thể yêu cầu xóa tài khoản theo một trong hai cách:</p>
+      <ol>
+        <li>Liên hệ quản trị viên hệ thống của Tổ chức để được vô hiệu hóa và xóa tài khoản.</li>
+        <li>Gửi email tới địa chỉ liên hệ ở mục 10 với tiêu đề <strong>"Yêu cầu xóa tài khoản Beetrack"</strong>, ghi rõ <strong>email hoặc tên đăng nhập</strong> và <strong>tên Tổ chức</strong> của bạn. Chúng tôi xác minh yêu cầu với Tổ chức và hoàn tất trong vòng <strong>30 ngày</strong>, sau đó gửi email xác nhận cho bạn.</li>
+      </ol>
+      <p>Một số dữ liệu công việc thuộc hồ sơ vận hành của Tổ chức (ví dụ biên bản kiểm kê, lịch sử nhiệm vụ) có thể được Tổ chức giữ lại theo quy định nội bộ hoặc yêu cầu của pháp luật. Phần dữ liệu được giữ lại sẽ được nêu rõ trong email xác nhận.</p>
+    </section>
+
+    <section>
+      <h3>8. ĐỐI TƯỢNG SỬ DỤNG</h3>
+      <p>Ứng dụng dành cho người lao động sử dụng trong công việc và không hướng tới trẻ em. Chúng tôi không chủ động thu thập thông tin của trẻ em.</p>
+    </section>
+
+    <section>
+      <h3>9. THAY ĐỔI CHÍNH SÁCH</h3>
+      <p>Chính sách này có thể được cập nhật để phù hợp với thay đổi của Ứng dụng hoặc quy định pháp luật. Mọi thay đổi được đăng tại trang này, kèm ngày cập nhật ở đầu trang, và có hiệu lực kể từ khi đăng tải.</p>
+    </section>
+
+    <section>
+      <h3>10. THÔNG TIN LIÊN HỆ</h3>
+      <p>Nếu bạn có câu hỏi về Chính sách quyền riêng tư này, vui lòng liên hệ Clavis Aurea qua:</p>
+      <div class="contact-info">
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:admin@clavisaurea.com.vn">admin@clavisaurea.com.vn</a></li>
+          <li><strong>Website:</strong> <a href="https://clavisaurea.com.vn" target="_blank" rel="noopener noreferrer">clavisaurea.com.vn</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button class="btn btn-primary" onclick="window.print()">In bản chính sách</button>
+      <button class="btn btn-secondary" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Cuộn lên đầu trang</button>
+    </div>
+  </div>
+</body>
+</html>
