@@ -401,7 +401,7 @@
         <li><strong>Với Tổ chức/Doanh nghiệp của bạn:</strong> Nếu bạn sử dụng tài khoản doanh nghiệp, dữ liệu hoạt động và vị trí của bạn sẽ được hiển thị trên hệ thống quản trị của doanh nghiệp đó.</li>
         <li><strong>Nhà cung cấp dịch vụ bên thứ ba:</strong> Chúng tôi có thể tích hợp một số dịch vụ SDK của bên thứ ba để tối ưu hệ thống (ví dụ: Google Play Services, Firebase Analytics, Firebase Crashlytics). Các bên này chỉ được tiếp cận thông tin kỹ thuật phục vụ cho mục đích vận hành và phân tích lỗi.</li>
         <li><strong>Với khách sạn mà bạn nhắn tin:</strong> Khi bạn gửi tin nhắn WhatsApp tới một khách sạn sử dụng Bee Service, nội dung trao đổi chỉ hiển thị cho nhân viên của chính khách sạn đó. Dữ liệu của mỗi khách sạn được tách biệt hoàn toàn với các khách sạn khác.</li>
-        <li><strong>Google Cloud (Vertex AI):</strong> Khi khách sạn bật trợ lý AI, nội dung tin nhắn bạn gửi cho trợ lý được gửi tới dịch vụ AI Gemini của Google để soạn câu trả lời, như mô tả ở mục 6.</li>
+        <li><strong>Google (dịch vụ AI Gemini):</strong> Khi khách sạn bật trợ lý AI, nội dung tin nhắn bạn gửi cho trợ lý được gửi tới dịch vụ AI Gemini của Google để soạn câu trả lời, qua tài khoản Google Cloud của chúng tôi hoặc tài khoản Google của chính khách sạn, như mô tả ở mục 6.</li>
         <li><strong>Meta Platforms:</strong> Tin nhắn WhatsApp được truyền qua Nền tảng WhatsApp Business do Meta vận hành. Việc Meta xử lý dữ liệu tuân theo chính sách quyền riêng tư của WhatsApp.</li>
         <li><strong>Yêu cầu pháp lý:</strong> Chúng tôi có thể tiết lộ thông tin nếu được yêu cầu bởi cơ quan nhà nước có thẩm quyền hoặc theo quy định của pháp luật.</li>
       </ul>
@@ -447,6 +447,7 @@
         <li>Khi bạn hỏi về chính mình: <strong>ngày nhận và trả phòng</strong>, <strong>trạng thái các đơn đã đặt</strong>, <strong>hạng thành viên và quyền lợi</strong>, <strong>voucher bạn đang có</strong>.</li>
       </ul>
       <p>Chúng tôi <strong>không</strong> gửi cho dịch vụ AI tên, số điện thoại, địa chỉ email, mã đặt phòng, số phòng của bạn, và <strong>không</strong> gửi hình ảnh hay tệp bạn đính kèm. Google xử lý dữ liệu này để trả về câu trả lời, theo các điều khoản xử lý dữ liệu của Google Cloud.</p>
+      <p>Một số khách sạn dùng tài khoản Google (khoá API Gemini) của chính họ cho trợ lý AI. Khi đó, các thông tin nêu trên được gửi tới Gemini qua tài khoản của khách sạn, và việc Google xử lý dữ liệu tuân theo thoả thuận giữa khách sạn và Google. Phạm vi thông tin gửi đi không thay đổi.</p>
       <p>Câu trả lời do AI soạn có thể chưa chính xác. Nhân viên khách sạn đọc được mọi tin nhắn trong mục Chat với lễ tân, có thể trả lời thay và có thể dừng trợ lý AI trong cuộc trò chuyện. Với những việc chỉ nhân viên làm được, trợ lý sẽ chuyển cho nhân viên khách sạn xử lý.</p>
       <p>Nội dung trò chuyện với trợ lý được lưu trên máy chủ của chúng tôi để hiển thị lịch sử trò chuyện cho bạn và giúp khách sạn cải thiện câu trả lời (ví dụ: thống kê những câu trợ lý chưa trả lời được và đánh giá hữu ích hay chưa của bạn). Bạn có thể yêu cầu xóa dữ liệu này theo mục 8.</p>
     </section>
