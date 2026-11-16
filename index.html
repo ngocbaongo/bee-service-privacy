@@ -342,7 +342,7 @@
         </svg>
       </div>
       <h1>CHÍNH SÁCH QUYỀN RIÊNG TƯ</h1>
-      <p class="meta-date">Cập nhật lần cuối: Ngày 02 tháng 11 năm 2026</p>
+      <p class="meta-date">Cập nhật lần cuối: Ngày 16 tháng 11 năm 2026</p>
     </header>
 
     <div class="intro">
@@ -378,6 +378,7 @@
       <ul>
         <li><strong>Camera:</strong> Để chụp ảnh xác nhận công việc, quét mã QR hoặc tải lên bằng chứng hoàn thành dịch vụ.</li>
         <li><strong>Bộ nhớ / Tệp và Phương tiện (Storage):</strong> Để lưu trữ tạm thời hoặc tải ảnh từ thiết bị lên hệ thống.</li>
+        <li><strong>Micro:</strong> Chỉ khi bạn bấm gọi thoại với trợ lý AI, để trợ lý nghe câu bạn nói trong cuộc gọi (xem mục 6). Ứng dụng không dùng micro vào lúc nào khác.</li>
         <li><strong>Thông báo (Notifications):</strong> Để gửi các cập nhật quan trạng về trạng thái công việc hoặc thông báo hệ thống.</li>
       </ul>
     </section>
@@ -401,7 +402,7 @@
         <li><strong>Với Tổ chức/Doanh nghiệp của bạn:</strong> Nếu bạn sử dụng tài khoản doanh nghiệp, dữ liệu hoạt động và vị trí của bạn sẽ được hiển thị trên hệ thống quản trị của doanh nghiệp đó.</li>
         <li><strong>Nhà cung cấp dịch vụ bên thứ ba:</strong> Chúng tôi có thể tích hợp một số dịch vụ SDK của bên thứ ba để tối ưu hệ thống (ví dụ: Google Play Services, Firebase Analytics, Firebase Crashlytics). Các bên này chỉ được tiếp cận thông tin kỹ thuật phục vụ cho mục đích vận hành và phân tích lỗi.</li>
         <li><strong>Với khách sạn mà bạn nhắn tin:</strong> Khi bạn gửi tin nhắn WhatsApp tới một khách sạn sử dụng Bee Service, nội dung trao đổi chỉ hiển thị cho nhân viên của chính khách sạn đó. Dữ liệu của mỗi khách sạn được tách biệt hoàn toàn với các khách sạn khác.</li>
-        <li><strong>Google (dịch vụ AI Gemini):</strong> Khi khách sạn bật trợ lý AI, nội dung tin nhắn bạn gửi cho trợ lý được gửi tới dịch vụ AI Gemini của Google để soạn câu trả lời, qua tài khoản Google Cloud của chúng tôi hoặc tài khoản Google của chính khách sạn, như mô tả ở mục 6.</li>
+        <li><strong>Google (dịch vụ AI Gemini):</strong> Khi khách sạn bật trợ lý AI, nội dung tin nhắn bạn gửi cho trợ lý, hoặc giọng nói của bạn khi gọi thoại với trợ lý, được gửi tới dịch vụ AI Gemini của Google để soạn câu trả lời, qua tài khoản Google Cloud của chúng tôi hoặc tài khoản Google của chính khách sạn, như mô tả ở mục 6.</li>
         <li><strong>Meta Platforms:</strong> Tin nhắn WhatsApp được truyền qua Nền tảng WhatsApp Business do Meta vận hành. Việc Meta xử lý dữ liệu tuân theo chính sách quyền riêng tư của WhatsApp.</li>
         <li><strong>Yêu cầu pháp lý:</strong> Chúng tôi có thể tiết lộ thông tin nếu được yêu cầu bởi cơ quan nhà nước có thẩm quyền hoặc theo quy định của pháp luật.</li>
       </ul>
@@ -435,10 +436,11 @@
 
 <section id="tro-ly-ai">
       <h3>6. TRỢ LÝ AI TRONG ỨNG DỤNG</h3>
-      <p>Bee Service có trợ lý ảo dùng trí tuệ nhân tạo (AI) để trả lời câu hỏi của khách nhanh hơn. Khách sạn quyết định có bật trợ lý hay không. Trợ lý xuất hiện ở hai nơi:</p>
+      <p>Bee Service có trợ lý ảo dùng trí tuệ nhân tạo (AI) để trả lời câu hỏi của khách nhanh hơn. Khách sạn quyết định có bật trợ lý hay không. Trợ lý xuất hiện ở ba nơi:</p>
       <ul>
         <li><strong>Bee Bot:</strong> trợ lý ảo bạn mở từ Trang chủ của Ứng dụng.</li>
         <li><strong>Mục Chat với lễ tân:</strong> khi nhân viên chưa kịp trả lời sau một khoảng thời gian do khách sạn đặt, câu trả lời có thể được trợ lý AI soạn tự động thay cho nhân viên.</li>
+        <li><strong>Gọi thoại với trợ lý:</strong> nếu khách sạn bật tính năng này, bạn có thể bấm nút Gọi để nói chuyện với trợ lý bằng giọng nói, và trợ lý trả lời bạn bằng giọng nói.</li>
       </ul>
       <p>Để soạn câu trả lời, chúng tôi gửi tới dịch vụ AI <strong>Gemini</strong> của Google (trên nền tảng Google Cloud Vertex AI) các thông tin sau:</p>
       <ul>
@@ -451,6 +453,10 @@
       <p>Một số khách sạn dùng tài khoản Google (khoá API Gemini) của chính họ cho trợ lý AI. Khi đó, các thông tin nêu trên được gửi tới Gemini qua tài khoản của khách sạn, và việc Google xử lý dữ liệu tuân theo thoả thuận giữa khách sạn và Google. Phạm vi thông tin gửi đi không thay đổi.</p>
       <p>Câu trả lời do AI soạn có thể chưa chính xác. Nhân viên khách sạn đọc được mọi tin nhắn trong mục Chat với lễ tân, có thể trả lời thay và có thể dừng trợ lý AI trong cuộc trò chuyện. Với những việc chỉ nhân viên làm được, trợ lý sẽ chuyển cho nhân viên khách sạn xử lý.</p>
       <p>Nội dung trò chuyện với trợ lý được lưu trên máy chủ của chúng tôi để hiển thị lịch sử trò chuyện cho bạn và giúp khách sạn cải thiện câu trả lời (ví dụ: thống kê những câu trợ lý chưa trả lời được và đánh giá hữu ích hay chưa của bạn). Bạn có thể yêu cầu xóa dữ liệu này theo mục 8.</p>
+      <h4>Gọi thoại với trợ lý</h4>
+      <p>Trong cuộc gọi, âm thanh từ micro của bạn được gửi liên tục tới dịch vụ AI Gemini của Google (Google Cloud Vertex AI), qua tài khoản Google Cloud của chúng tôi, để nhận diện lời nói và tạo giọng trả lời ngay trong lúc gọi. Ngoài âm thanh, phạm vi thông tin gửi tới dịch vụ AI giống như khi bạn nhắn tin cho trợ lý, đã nêu ở trên.</p>
+      <p>Chúng tôi <strong>không</strong> ghi âm và <strong>không</strong> lưu âm thanh cuộc gọi. Chúng tôi chỉ lưu <strong>bản chữ</strong> do hệ thống tự chuyển từ lời nói của bạn và của trợ lý, cùng thời điểm và thời lượng cuộc gọi. Bản chữ này nằm trong lịch sử trò chuyện với trợ lý; nếu bạn gọi từ mục Chat với lễ tân, cuộc trò chuyện với lễ tân có thêm một dòng tóm tắt cuộc gọi, và nhân viên khách sạn có thể xem toàn bộ bản chữ để hỗ trợ bạn. Bản chữ tự động có thể chưa đúng hoàn toàn với lời bạn nói.</p>
+      <p>Micro chỉ được dùng trong thời gian cuộc gọi diễn ra và dừng ngay khi cuộc gọi kết thúc. Bạn có thể yêu cầu xóa bản chữ cuộc gọi theo mục 8, giống như các nội dung trò chuyện khác với trợ lý.</p>
     </section>
 
     <section>
